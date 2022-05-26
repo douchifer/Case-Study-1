@@ -17,7 +17,7 @@ public class Power : MonoBehaviour
     private Image image;
     internal  PlayerController playerController;
 
-    private void Start()
+    virtual public void Start()
     {
         // Get Imager component
         image = GetComponent<Image>();

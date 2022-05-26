@@ -5,11 +5,22 @@ using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
-    [SerializeField] private GameObject singleBulletPrefab;
-    [SerializeField] private GameObject multipleBulletPrefab;
+    private GameObject singleBulletPrefab;
+    private GameObject multipleBulletsPrefab;
     private Queue<Bullet> singleBulletsPool = new Queue<Bullet>();
     private Queue<Bullet> multipleBulletsPool = new Queue<Bullet>();
 
+
+    private void Start()
+    {
+        GetValues();
+    }
+
+    private void GetValues()
+    {
+        singleBulletPrefab = GameManager.gameData.singleBullet;
+        multipleBulletsPrefab = GameManager.gameData.multipleBullets;
+    }
     private void PutBulletInThePool(Bullet bullet)
     {
         // Puts the bullet corresponding pool
@@ -66,7 +77,7 @@ public class BulletPool : MonoBehaviour
             return multipleBulletsPool.Dequeue();
         }
 
-        var bullet = Instantiate(multipleBulletPrefab).GetComponent<Bullet>();
+        var bullet = Instantiate(multipleBulletsPrefab).GetComponent<Bullet>();
         bullet.ResetBullet();
 
         return bullet;

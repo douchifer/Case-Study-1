@@ -79,7 +79,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -319,7 +319,6 @@ MonoBehaviour:
   activeSprite: {fileID: 21300000, guid: 8863bc943f307424fb574c345a766ce2, type: 3}
   lockedSprite: {fileID: 21300000, guid: 01207fa83798c7549b48cc465ecf9366, type: 3}
   hasOnActive: 0
-  twoBulletsPrefab: {fileID: 7488678815354247951, guid: 9d58f74e85d3bd9479d222302b69c451, type: 3}
 --- !u!114 &2394833144899637371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,7 +471,6 @@ MonoBehaviour:
   activeSprite: {fileID: 21300000, guid: 326efddb4b3bdf548952532e0de68bab, type: 3}
   lockedSprite: {fileID: 21300000, guid: 978586cafbb3b1f4996b8446a5502e6b, type: 3}
   hasOnActive: 0
-  improvedShootInterval: 0.3
 --- !u!1 &2394833144992547682
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +838,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2394833146441106743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2394833146527719586
 GameObject:
   m_ObjectHideFlags: 0

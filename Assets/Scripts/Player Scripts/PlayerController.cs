@@ -6,18 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     public Shooter shooter { get; private set; }
     public  Mover mover { get; private set; }
+    public Swerver swerver { get; private set; }
     void Start()
     {
         // Get Components
         shooter = GetComponent<Shooter>();
         mover = GetComponent<Mover>();
-    }
+        swerver = GetComponent<Swerver>();
 
-    void Update()
-    {
-        
     }
-
 
     private PlayerController GetPlayerController()
     {

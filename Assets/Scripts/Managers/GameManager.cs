@@ -4,18 +4,30 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameData gData;
+    public static GameData gameData;
+    private bool gameStarted;
 
-    // Use this for initialization
+    private void Awake()
+    {
+        gameData = gData;
+    }
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButtonDown(0) && !gameStarted)
+        {
+            EventManager.gameStarted?.Invoke();
+        }
 
     }
 
+    // Loads main menu
     public void GoToMainMenu() => SceneManager.LoadScene("MainMenu");
+
+   
 }

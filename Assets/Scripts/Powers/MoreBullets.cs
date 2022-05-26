@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MoreBullets : Power
 {
-    [SerializeField] private float improvedShootInterval;
+    private float improvedShootInterval;
+
+    public override void Start()
+    {
+        base.Start();
+        improvedShootInterval = GameManager.gameData.improvedShootInterval;
+    }
     public override void OnActivate()
     {
         base.OnActivate();

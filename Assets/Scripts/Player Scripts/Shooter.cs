@@ -7,29 +7,39 @@ using System;
 
 public class Shooter : MonoBehaviour
 {
-    [SerializeField] private GameObject defaultBulletPrefab;
+    private GameObject defaultBulletPrefab;
     public GameObject bulletPrefab { get; private set; }
     public Action shootAction;
 
-    [HideInInspector] public bool shootEnabled;
+    private bool shootEnabled;
 
-    [SerializeField] private float defaultShootInterval;
+    private float defaultShootInterval;
     public float shootInterval { get; private set; }
     private float currentShootTime;
 
 
-    [SerializeField] private float defaultBulletSpeed;
+    private float defaultBulletSpeed;
     public float bulletSpeed { get; private set; }
 
 
-    public float bulletLifeTime;
+    [HideInInspector] public float bulletLifeTime;
     public Transform nozzle;
+
 
     void Start()
     {
+        GetValues();
         SetDefaultValues();
     }
 
+    private void GetValues()
+    {
+        // Get values from game data
+        defaultBulletPrefab = GameManager.gameData.defaultBulletPrefab;
+        defaultShootInterval = GameManager.gameData.defaultShootInterval;
+        defaultBulletSpeed = GameManager.gameData.defaultBulletSpeed;
+        bulletLifeTime = GameManager.gameData.bulletLifeTime;
+    }
     private void SetDefaultValues()
     {
         // Restore default values
@@ -48,6 +58,8 @@ public class Shooter : MonoBehaviour
 
     private void Shoot()
     {
+        if (!shootEnabled) return;
+
         if (currentShootTime > 0)
         {
             currentShootTime -= Time.deltaTime;
@@ -81,4 +93,20 @@ public class Shooter : MonoBehaviour
 
     public void ChangeBulletSpeed(float speed) => bulletSpeed = speed;
     public void RestoreBulletSpeed() => bulletSpeed = defaultBulletSpeed;
+
+
+    private void GameStarted()
+    {
+        shootEnabled = true;
+    }
+
+    private void OnEnable()
+    {
+        EventManager.gameStarted += GameStarted;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.gameStarted -= GameStarted;
+    }
 }

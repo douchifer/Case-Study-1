@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 803169673}
   - component: {fileID: 803169674}
   - component: {fileID: 803169675}
+  - component: {fileID: 803169682}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -145,10 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51c965e81b051247b798b3a964d758f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultBulletPrefab: {fileID: 7488678815354247951, guid: 7d6c8c59de4e3dc449386d04ecbcabfc, type: 3}
-  shootEnabled: 0
-  defaultShootInterval: 1
-  defaultBulletSpeed: 50
   bulletLifeTime: 2
   nozzle: {fileID: 1859908997}
 --- !u!114 &803169674
@@ -163,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c892df61903a85349aca408920f525e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeedValue: 10
 --- !u!114 &803169675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,5 +170,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de7c85007ee50ac4f9802270d552bae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &803169682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3632588468279375813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48355f9bb22b1994084101c59c49fd60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -17,4 +17,6 @@ public class EventManager
 
     public static Action<Bullet> putBulletToThePool;
     public static Func<GameObject, Bullet> getBulletFromThePool;
+
+    public static Action gameStarted;
 }

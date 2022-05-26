@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class TwoBullets : Power
 {
-    [SerializeField] private GameObject twoBulletsPrefab;
+    private GameObject twoBulletsPrefab;
+
+    public override void Start()
+    {
+        base.Start();
+        twoBulletsPrefab = GameManager.gameData.twoBulletsPrefab;
+    }
     public override void OnActivate()
     {
         base.OnActivate();
